@@ -1,0 +1,40 @@
+{
+  "name": "formulaevaluator",
+  "version": "1.0.0",
+  "description": "evaluates formula",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.js.map",
+    "dist/index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranuaggarwal/FormulaCalculator.git"
+  },
+  "author": "Compro Technologies",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@types/jsonpath": "^0.2.0",
+    "jsonpath": "^1.0.2",
+    "libs-leonardo-formula-parser": "^3.0.3-SheetReference.1"
+  }
+}
